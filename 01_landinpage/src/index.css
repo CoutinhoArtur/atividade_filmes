@@ -1,0 +1,306 @@
+
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ESTRUTURA DA PÁGINA */
+.home {
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CABEÇALHO */
+.header {
+  width: 100%;
+  padding: 25px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo h1 {
+  color: #e50914;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #e50914;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 25px;
+  font-size: 15px;
+}
+
+.btn button:hover {
+  background-color: #b20710;
+}
+
+/* MENU HAMBÚRGUER */
+.menu-toggle {
+  display: none;
+  width: 32px;
+  background: transparent;
+  border: none;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 6%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 48px;
+}
+
+.col1 {
+  flex: 1;
+}
+
+.col1 h2 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.col1 p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.col1 button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 13px 38px;
+  border-radius: 6px;
+  font-size: 17px;
+}
+
+.col1 button:hover {
+  background-color: #b20710;
+}
+
+/* CARDS DOS FILMES */
+.cards {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGENS DOS FILMES */
+.card1 {
+  background-image: url("./assets/afterlife.jpg");
+}
+
+.card2 {
+  background-image: url("./assets/transformers.jpg");
+}
+
+.card3 {
+  background-image: url("./assets/mowgli.jpg");
+}
+
+.card4 {
+  background-image: url("./assets/shift.png");
+}
+
+.card5 {
+  background-image: url("./assets/squidgame.webp");
+}
+
+.card6 {
+  background-image: url("./assets/harrypotter.jpg");
+}
+
+/* TABLETS E TELAS MENORES */
+@media (max-width: 1100px) {
+  .header {
+    padding: 20px 4%;
+  }
+
+  .main {
+    padding: 30px 4%;
+    gap: 30px;
+  }
+
+  .col1 h2 {
+    font-size: 45px;
+  }
+
+  .cards {
+    gap: 12px;
+  }
+
+  .card {
+    height: 210px;
+  }
+}
+
+/* TABLETS E CELULARES */
+@media (max-width: 900px) {
+  .header {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #181818;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 10;
+  }
+
+  .navigation.open {
+    max-height: 300px;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .col1 h2 {
+    font-size: 42px;
+  }
+
+  .cards {
+    width: 100%;
+    max-width: 650px;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  .logo h1 {
+    font-size: 24px;
+  }
+
+  .header {
+    padding: 18px 5%;
+  }
+
+  .btn button {
+    padding: 9px 15px;
+  }
+
+  .main {
+    padding: 35px 5%;
+  }
+
+  .col1 h2 {
+    font-size: 35px;
+  }
+
+  .col1 p {
+    font-size: 15px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    height: 230px;
+  }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 380px) {
+  .logo h1 {
+    font-size: 21px;
+  }
+
+  .col1 h2 {
+    font-size: 30px;
+  }
+
+  .card {
+    height: 190px;
+  }
+}
